@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naseem — Stars of Science S18 One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#081A20;
+    --panel:#0E2A33;
+    --panel-2:#0B242C;
+    --line:#1A3F4B;
+    --line-soft:#143540;
+    --cyan:#3FD0D9;
+    --cyan-soft:#8CE4E8;
+    --ink:#EAF6F6;
+    --body:#A9C6CC;
+    --muted:#6C939C;
+    --ember:#F2944A;
+    --ember-hot:#EE6C3E;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --display:'Sora','Inter',-apple-system,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--bg);
+    color:var(--body);
+    font-family:var(--sans);
+    line-height:1.5;
+    padding:34px 20px 60px;
+    display:flex;
+    justify-content:center;
+  }
+  .sheet{
+    width:100%;
+    max-width:860px;
+    background:
+      radial-gradient(900px 360px at 100% -8%, rgba(63,208,217,0.07), transparent 60%),
+      radial-gradient(700px 320px at -6% 4%, rgba(242,148,74,0.06), transparent 55%),
+      var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  /* ---------- micro type ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .label{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--cyan);
+  }
+  .label.warm{color:var(--ember);}
+  p{font-size:13.5px;color:var(--body);}
+  strong{color:var(--ink);font-weight:600;}
+  .ph{
+    font-family:var(--mono);
+    color:var(--ember);
+    font-weight:500;
+    font-size:0.92em;
+    white-space:nowrap;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    display:flex;
+    gap:26px;
+    padding:30px 34px 26px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  /* signature: thermal gauge spine */
+  .gauge{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:7px;padding-top:4px;}
+  .gauge .cap{font-family:var(--mono);font-size:8.5px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;}
+  .bars{display:flex;flex-direction:column;gap:3px;}
+  .bars span{display:block;width:13px;height:13px;border-radius:2px;}
+  .b1{background:var(--ember-hot);}
+  .b2{background:#F08043;}
+  .b3{background:#EC9A57;}
+  .b4{background:#C9A06A;}
+  .b5{background:#7FAE9C;}
+  .b6{background:#56C0C2;}
+  .b7{background:#46CFD3;}
+  .b8{background:var(--cyan);}
+  .hero-main{flex:1 1 auto;min-width:0;}
+  .wordmark{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;}
+  .wordmark h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:31px;
+    letter-spacing:-0.015em;
+    color:var(--ink);
+    line-height:1;
+  }
+  .wordmark .ar{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:0.04em;}
+  .thesis{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:23px;
+    line-height:1.22;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:6px 0 12px;
+  }
+  .thesis .hot{color:var(--ember);}
+  .thesis .cool{color:var(--cyan);}
+  .lede{font-size:13.5px;max-width:60ch;}
+
+  /* ---------- readout stats ---------- */
+  .readouts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .stat{padding:15px 34px;border-right:1px solid var(--line-soft);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:var(--mono);font-weight:600;font-size:19px;color:var(--cyan);letter-spacing:-0.01em;}
+  .stat.warm .num{color:var(--ember);}
+  .stat .desc{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35;}
+
+  /* ---------- body grid ---------- */
+  .block{padding:22px 34px;border-bottom:1px solid var(--line-soft);}
+  .block:last-child{border-bottom:none;}
+  .block > .label{display:block;margin-bottom:11px;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .col h3{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--ink);margin-bottom:6px;letter-spacing:0.01em;}
+  .col p{font-size:12.5px;}
+
+  /* product steps */
+  .steps{display:grid;grid-template-columns:1fr 1fr 1fr 0.9fr;gap:18px;align-items:start;}
+  .step{}
+  .step .k{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;color:var(--cyan);text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:7px;}
+  .step .k em{color:var(--muted);font-style:normal;}
+  .step h4{font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink);margin-bottom:5px;}
+  .step p{font-size:12px;}
+  .glyph{display:flex;align-items:center;justify-content:center;padding-top:2px;}
+
+  /* moat callout */
+  .moat{
+    background:linear-gradient(180deg, rgba(63,208,217,0.06), rgba(63,208,217,0.02));
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .moat h3{color:var(--cyan-soft);}
+
+  .founder-name{font-family:var(--display);font-weight:600;color:var(--ink);}
+
+  .foot{
+    padding:14px 34px 18px;
+    background:var(--panel-2);
+    border-top:1px solid var(--line);
+  }
+  .foot p{font-family:var(--mono);font-size:10px;line-height:1.6;color:var(--muted);letter-spacing:0.02em;}
+  .foot .ph{font-size:10px;}
+
+  a{color:var(--cyan);}
+
+  @media (max-width:720px){
+    body{padding:18px 12px 40px;}
+    .hero{flex-direction:column;gap:18px;padding:24px 20px;}
+    .gauge{flex-direction:row;align-self:flex-start;}
+    .bars{flex-direction:row;}
+    .readouts{grid-template-columns:1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--line-soft);padding:13px 20px;}
+    .stat:last-child{border-bottom:none;}
+    .block{padding:18px 20px;}
+    .two,.three,.steps{grid-template-columns:1fr;gap:18px;}
+    .thesis{font-size:20px;}
+    .foot{padding:14px 20px;}
+  }
+
+  @media print{
+    @page{size:A4;margin:10mm;}
+    body{padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .sheet{border:none;border-radius:0;max-width:100%;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="gauge" aria-hidden="true">
+      <span class="cap">Outside <span class="ph">⟨48°⟩</span></span>
+      <div class="bars">
+        <span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span>
+        <span class="b5"></span><span class="b6"></span><span class="b7"></span><span class="b8"></span>
+      </div>
+      <span class="cap">Comfort <span class="ph">⟨23°⟩</span></span>
+    </div>
+    <div class="hero-main">
+      <div class="eyebrow">Stars of Science · Season 18 — Concept One-Pager</div>
+      <div class="wordmark">
+        <h1>Naseem</h1><span class="ar">نسيم — "breeze"</span>
+      </div>
+      <div class="thesis">Cooling is the Gulf's <span class="hot">single largest energy cost</span>. Naseem makes it <span class="cool">intelligent</span> — and proves it's safe.</div>
+      <p class="lede">A retrofit AI brain that turns a building's separate air conditioners into one coordinated system. It learns when people actually arrive, cools only what's needed, and shifts load off peak hours — keeping every space comfortable while sharply cutting cooling energy.</p>
+    </div>
+  </div>
+
+  <!-- READOUTS -->
+  <div class="readouts">
+    <div class="stat warm">
+      <div class="num">⟨60–70%⟩</div>
+      <div class="desc">of Gulf peak electricity goes to air conditioning</div>
+    </div>
+    <div class="stat">
+      <div class="num">⟨25–35%⟩</div>
+      <div class="desc">target cooling-energy reduction, comfort held</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="desc">comfort or safety breaches — formally guaranteed</div>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <div class="block">
+    <span class="label warm">The Problem</span>
+    <div class="two">
+      <div class="col">
+        <p>In the Gulf, the buildings that waste the most are the ones cooled around the clock for people who are only there part of the day — <strong>mosques, schools, government halls, event venues</strong>. Their air conditioners run independently, on fixed schedules, chilling empty volumes for hours.</p>
+      </div>
+      <div class="col">
+        <p>Today's options don't solve it. Smart thermostats fix <strong>one unit at a time</strong> and react after the room is already wrong. Building management systems are <strong>expensive, custom, and still don't coordinate units</strong> toward a shared comfort-and-energy goal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT -->
+  <div class="block">
+    <span class="label">The Product — how Naseem works</span>
+    <div class="steps">
+      <div class="step">
+        <div class="k"><em>01</em> Sense</div>
+        <h4>Read the building</h4>
+        <p>A small edge device reads temperature, humidity, and occupancy across zones. It retrofits onto existing AC — no rip-and-replace.</p>
+      </div>
+      <div class="step">
+        <div class="k"><em>02</em> Coordinate</div>
+        <h4>One team, one goal</h4>
+        <p>Multi-agent AI treats each unit as a player on one team — forecasting arrivals, pre-cooling only the zones that need it, balancing comfort, energy, and peak load together.</p>
+      </div>
+      <div class="step">
+        <div class="k"><em>03</em> Act</div>
+        <h4>Coordinated set-points</h4>
+        <p>Units receive real-time set-points. Comfort stays inside guaranteed bounds; everything else is optimized away.</p>
+      </div>
+      <div class="glyph" aria-hidden="true">
+        <svg width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="46" y1="46" x2="46" y2="12" stroke="#1A3F4B"/>
+          <line x1="46" y1="46" x2="78" y2="32" stroke="#1A3F4B"/>
+          <line x1="46" y1="46" x2="74" y2="70" stroke="#1A3F4B"/>
+          <line x1="46" y1="46" x2="18" y2="68" stroke="#1A3F4B"/>
+          <line x1="46" y1="46" x2="14" y2="30" stroke="#1A3F4B"/>
+          <circle cx="46" cy="12" r="5" fill="#3FD0D9"/>
+          <circle cx="78" cy="32" r="5" fill="#46CFD3"/>
+          <circle cx="74" cy="70" r="5" fill="#F2944A"/>
+          <circle cx="18" cy="68" r="5" fill="#3FD0D9"/>
+          <circle cx="14" cy="30" r="5" fill="#F2944A"/>
+          <circle cx="46" cy="46" r="8" fill="#0B242C" stroke="#3FD0D9" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIFFERENT + MOAT -->
+  <div class="block">
+    <div class="two">
+      <div class="col">
+        <span class="label">Why it's different</span>
+        <p style="margin-top:9px;">Thermostats and building management systems control units in <strong>isolation</strong> and react after the fact. Naseem coordinates the <strong>whole building</strong> toward one goal, <strong>predicts</strong> occupancy instead of reacting, and is <strong>grid-aware</strong> — shifting load away from costly peak hours.</p>
+      </div>
+      <div class="col">
+        <div class="moat">
+          <span class="label">The moat — provably-safe AI</span>
+          <h3 style="margin-top:9px;">Verified, not just trained</h3>
+          <p>Naseem is the first building-control AI whose decisions are <strong>formally verified</strong> — mathematically proven never to breach comfort or safety limits. For a facility manager, that removes the core fear of handing control to an AI: a defensible, hard-to-copy edge built on the founder's verification research.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKET / IMPACT / MODEL -->
+  <div class="block">
+    <span class="label">Market · Impact · Business model</span>
+    <div class="three" style="margin-top:4px;">
+      <div class="col">
+        <h3>Go-to-market</h3>
+        <p>Beachhead: <strong>mosques</strong> — <span class="ph">⟨X,000⟩</span> in the GCC, where occupancy is sharply predictable from prayer times and cooling waste is highest. Expand to schools, government buildings, and malls. Buyers: facility managers, energy-service companies, and governments with net-zero mandates.</p>
+      </div>
+      <div class="col">
+        <h3>Impact</h3>
+        <p>Lower bills, lower peak-grid strain, lower carbon — in the region where cooling matters most. A direct contribution to Gulf <strong>net-zero and sustainability</strong> targets, and a template for every hot-climate market.</p>
+      </div>
+      <div class="col">
+        <h3>How it earns</h3>
+        <p>Edge hardware plus a <strong>software subscription</strong> — or a <strong>share of verified energy savings</strong>, so the building pays nothing upfront and only benefits when Naseem performs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MVP -->
+  <div class="block">
+    <span class="label">12-week prototype — feasibility</span>
+    <p style="margin-top:9px;max-width:78ch;">An off-the-shelf edge controller, a low-cost sensor kit, and a multi-zone testbed — paired with a high-fidelity digital twin — to demonstrate <strong>measured savings against a standard controller</strong>. The core intelligence is already validated in simulation, which sharply de-risks delivery inside the competition timeline and lets the weeks go to hardening and demonstration, not invention from scratch.</p>
+  </div>
+
+  <!-- FOUNDER + ASK -->
+  <div class="block">
+    <div class="two">
+      <div class="col">
+        <span class="label">Founder</span>
+        <p style="margin-top:9px;"><span class="founder-name">Dr. <span class="ph">⟨Fatima — Surname⟩</span></span> — PhD in <strong>multi-agent deep reinforcement learning</strong> for smart-building optimization, with peer-reviewed publications including in <em>Information and Software Technology</em>. Specialist in <strong>formally-verified AI control</strong>. The product is her research domain end to end — an unusually tight founder–market fit.</p>
+      </div>
+      <div class="col">
+        <span class="label">The ask &amp; the vision</span>
+        <p style="margin-top:9px;">With Stars of Science venture support, Naseem moves from <strong>validated technology to a deployed product</strong> — beginning with a flagship pilot, then scaling across hot-climate buildings worldwide. The vision: <strong>the default operating system for cooling in the hot world.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <p>Figures shown as <span class="ph">⟨brackets⟩</span> are placeholders — replace with your validated, sourced numbers before submitting. Working product name "Naseem" (نسيم, "breeze") — rename freely. Anchor the energy-saving and market figures to your own QWS2 / simulation results and a credible regional source.</p>
+  </div>
+
+</div>
+</body>
+</html>
